@@ -1,0 +1,13 @@
+@import "sass/sass-shared";
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: $mainBlue;
+}
