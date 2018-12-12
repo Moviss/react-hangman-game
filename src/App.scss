@@ -1,0 +1,21 @@
+@import "sass/sass-shared";
+
+.App {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $backgroundBlue;
+}
+
+.App-playground {
+  @include center-horizontal;
+  width: 80vw;
+  max-width: 100rem;
+  height: 70vh;
+  border-radius: 10px;
+  background-color: $mainLight;
+  background-image: -webkit-linear-gradient(135deg, $mainBlue 20%, $mainLight 20%);
+}
+
