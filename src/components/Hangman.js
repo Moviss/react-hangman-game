@@ -41,7 +41,6 @@ export default class Hangman extends Component {
                 <img className="leftLeg" src={leftLeg} alt="Hangman's Left Leg"/>
                 <img className="rightFoot" src={rightFoot} alt="Hangman's Right Foot"/>
                 <img className="leftFoot" src={leftFoot} alt="Hangman's Left Foot"/>
-
             </div>
         )
     }
