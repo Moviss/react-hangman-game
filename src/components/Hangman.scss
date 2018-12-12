@@ -1,0 +1,118 @@
+.Hangman {
+  position: relative;
+  left: 0;
+  width: 25%;
+  height: 75%;
+}
+
+.image-block {
+  display: block;
+}
+
+.bar {
+  width: 25rem;
+  height: auto;
+  position: absolute;
+  top: 4rem;
+  left: -9rem;
+  z-index: 1;
+}
+
+.head {
+  width: 10rem;
+  height: auto;
+  position: absolute;
+  top: 7rem;
+  left: 8.5rem;
+  z-index: 2;
+}
+
+.neck {
+  width: 3rem;
+  height: auto;
+  position: absolute;
+  top: 16rem;
+  left: 12rem;
+  z-index: 1;
+}
+
+.corpus {
+  width: 8rem;
+  height: auto;
+  position: absolute;
+  top: 19.2rem;
+  left: 9.7rem;
+  z-index: 1;
+}
+
+.rightArm {
+  width: 8rem;
+  height: auto;
+  position: absolute;
+  top: 19.2rem;
+  left: 14.7rem;
+  z-index: 2;
+}
+
+.leftArm {
+  width: 8rem;
+  height: auto;
+  position: absolute;
+  top: 19.2rem;
+  left: 4.7rem;
+  z-index: 2;
+}
+
+.rightHand {
+  width: 2em;
+  height: auto;
+  position: absolute;
+  top: 25.2rem;
+  left: 21rem;
+  z-index: 1;
+}
+
+.leftHand {
+  width: 2em;
+  height: auto;
+  position: absolute;
+  top: 25.2rem;
+  left: 4.4rem;
+  z-index: 1;
+}
+
+.rightLeg {
+  width: 5.5em;
+  height: auto;
+  position: absolute;
+  top: 30.2rem;
+  left: 14.4rem;
+  z-index: 2;
+}
+
+.leftLeg {
+  width: 5.5em;
+  height: auto;
+  position: absolute;
+  top: 30.2rem;
+  left: 7.6rem;
+  z-index: 2;
+}
+
+.rightFoot {
+  width: 5.5em;
+  height: auto;
+  position: absolute;
+  top: 40.7rem;
+  left: 16.7rem;
+  z-index: 1;
+}
+
+.leftFoot {
+  width: 5.5em;
+  height: auto;
+  position: absolute;
+  top: 40.7rem;
+  left: 5.3rem;
+  z-index: 1;
+}
