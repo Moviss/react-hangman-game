@@ -99,10 +99,19 @@ class App extends Component {
           )}
 
           {(this.state.missed.length >= 11 || this.state.win) && (
-            <GameOver
+              <div>
+                <Hangman missed={this.state.missed} />
+                <Missed missed={this.state.missed} />
+                <LettersToGuess
+                  word={this.state.word}
+                  letters={this.state.letters}
+                />
+                <GameOver
               win={this.state.win}
               onClickNew={() => this.handleNewGame()}
-            />
+                />
+              </div>
+
           )}
         </div>
       </div>

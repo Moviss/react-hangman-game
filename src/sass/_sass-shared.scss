@@ -30,29 +30,39 @@ $yellow: #ffb700;
   transform: translateY(-50%);
 }
 
-//Media breakepoints the same as Bootstrap
-@mixin respond($breakpoint) {
-  @if $breakpoint == sm {
-    @media (min-width: 576px) { @content };
-  }
-  @if $breakpoint == md {
-    @media (min-width: 768px) { @content };
-  }
-  @if $breakpoint == lg {
-    @media (min-width: 992px) { @content };
-  }
-  @if $breakpoint == xl {
-    @media (min-width: 1200px) { @content };
-  }
-}
 
-// Text size
-@mixin text-size($font-size, $line-height) {
-  font-size: $font-size;
-  line-height: $line-height;
-}
+// Swing animation
 
-// Basic transition
-@mixin basic-transition {
-  transition: all .25s ease-in-out;
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
 }

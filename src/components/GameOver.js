@@ -6,7 +6,7 @@ const GameOver = props => {
   return (
     <div className="GameOver">
       {props.win ? (
-        <div className="GameOver-label">YOU WON</div>
+        <div className="GameOver-label GameOver-won">YOU WON</div>
       ) : (
         <div className="GameOver-label">GAME OVER</div>
       )}

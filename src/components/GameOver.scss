@@ -4,9 +4,16 @@
   @include center-horizontal;
 }
 
+.GameOver-won {
+  color: $yellow !important;
+  animation: swing 1s ease;
+  z-index: 200000;
+}
+
 .GameOver-label {
   font-size: 6rem;
   color: black;
+  z-index: 200000;
 }
 
 .GameOver-button {
@@ -20,9 +27,17 @@
   line-height: 6rem;
   margin: 0 auto;
   cursor: pointer;
+  z-index: 20000000;
 }
 
 .GameOver-button:hover {
   color: darken($yellow, 5%);
   border-color: darken($yellow, 5%);
+}
+
+.GameOver-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: $backgroundBlue;
+  opacity: .3;
 }
