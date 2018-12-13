@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import bar from '../img/bar.png';
 import head from '../img/head.png';
@@ -24,8 +24,6 @@ export default class Hangman extends Component {
     }
 
 
-
-
     render() {
         return (
             <div className="Hangman">
@@ -33,14 +31,22 @@ export default class Hangman extends Component {
                 <img className="head" src={head} alt="Hangman's Head"/>
                 <img className="neck" src={neck} alt="Hangman's Neck"/>
                 <img className="corpus" src={corpus} alt="Hangman's Corpus"/>
-                <img className="rightArm" src={rightArm} alt="Hangman's Right Arm"/>
-                <img className="leftArm" src={leftArm} alt="Hangman's Left Arm"/>
-                <img className="rightHand" src={rightHand} alt="Hangman's Right Hand"/>
-                <img className="leftHand" src={leftHand} alt="Hangman's Left Hand"/>
-                <img className="rightLeg" src={rightLeg} alt="Hangman's Right Leg"/>
-                <img className="leftLeg" src={leftLeg} alt="Hangman's Left Leg"/>
-                <img className="rightFoot" src={rightFoot} alt="Hangman's Right Foot"/>
-                <img className="leftFoot" src={leftFoot} alt="Hangman's Left Foot"/>
+                <img className="rightArm" src={rightArm}
+                     alt="Hangman's Right Arm"/>
+                <img className="leftArm" src={leftArm}
+                     alt="Hangman's Left Arm"/>
+                <img className="rightHand" src={rightHand}
+                     alt="Hangman's Right Hand"/>
+                <img className="leftHand" src={leftHand}
+                     alt="Hangman's Left Hand"/>
+                <img className="rightLeg" src={rightLeg}
+                     alt="Hangman's Right Leg"/>
+                <img className="leftLeg" src={leftLeg}
+                     alt="Hangman's Left Leg"/>
+                <img className="rightFoot" src={rightFoot}
+                     alt="Hangman's Right Foot"/>
+                <img className="leftFoot" src={leftFoot}
+                     alt="Hangman's Left Foot"/>
             </div>
         )
     }
