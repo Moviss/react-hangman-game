@@ -1,5 +1,16 @@
 @import "sass/sass-shared";
 
+//---------
+// FONTS:
+//---------
+
+@font-face {
+  font-family: 'AllerDisplay';
+  font-style: normal;
+  font-weight: 700;
+  src: local('AllerDisplay'), url('./fonts/AllerDisplay.ttf');
+}
+
 html {
   // This defines what 1rem is
   font-size: 62.5%;
@@ -10,4 +21,5 @@ body {
   margin: 0;
   padding: 0;
   background-color: $mainBlue;
+  font-family: AllerDisplay;
 }

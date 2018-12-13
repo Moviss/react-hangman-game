@@ -11,11 +11,16 @@
 
 .App-playground {
   @include center-horizontal;
-  width: 80vw;
-  max-width: 100rem;
-  height: 70vh;
+  width: 100rem;
+  height: 60rem;
   border-radius: 10px;
   background-color: $mainLight;
   background-image: -webkit-linear-gradient(135deg, $mainBlue 20%, $mainLight 20%);
+  overflow: hidden;
+}
+
+.App-gameover {
+  filter: drop-shadow(100px 4px 10px blue);
+  z-index: 1000;
 }
 

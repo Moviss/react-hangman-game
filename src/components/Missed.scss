@@ -1,0 +1,29 @@
+@import "../sass/sass-shared";
+
+.Missed {
+  position: relative;
+  right: -55rem;
+  top: -45rem;
+  width: 45rem;
+  height: 20rem;
+}
+
+.notification {
+  position: absolute;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: $grey;
+  font-family: AllerDisplay;
+  font-weight: 700;
+  top: 4rem;
+  left: 0;
+}
+
+.missedLetters {
+  position: absolute;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: $mainBlue;
+  top: 6.5rem;
+  left: 0;
+}
