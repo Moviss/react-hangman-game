@@ -1,0 +1,28 @@
+@import "../sass/sass-shared";
+
+.GameOver {
+  @include center-horizontal;
+}
+
+.GameOver-label {
+  font-size: 6rem;
+  color: black;
+}
+
+.GameOver-button {
+  font-size: 2rem;
+  color: $yellow;
+  border: .2rem dashed $yellow;
+  border-radius: 30px;
+  width: 18rem;
+  height: 6rem;
+  text-align: center;
+  line-height: 6rem;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.GameOver-button:hover {
+  color: darken($yellow, 5%);
+  border-color: darken($yellow, 5%);
+}

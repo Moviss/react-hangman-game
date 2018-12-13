@@ -19,3 +19,8 @@
   overflow: hidden;
 }
 
+.App-gameover {
+  filter: drop-shadow(100px 4px 10px blue);
+  z-index: 1000;
+}
+
