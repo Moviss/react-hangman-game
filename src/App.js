@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import "./App.scss";
 import KeyboardEventHandler from "react-keyboard-event-handler";
-import randomWords from 'random-words';
+import randomWords from "random-words";
 
 import Hangman from "./components/Hangman";
 import Missed from "./components/Missed";
 import LettersToGuess from "./components/LettersToGuess";
 import GameOver from "./components/GameOver";
-import GameWon from "./components/GameWon";
 
 class App extends Component {
   constructor(props) {
@@ -16,13 +15,26 @@ class App extends Component {
     this.state = {
       word: "",
       letters: [],
-      missed: []
+      missed: [],
+      found: [],
+      win: false
     };
   }
 
   requestWord() {
-    // gives random word
-    return randomWords({exactly: 1, maxLength: 11}).toString();
+    return randomWords({ exactly: 1, maxLength: 11 }).toString();
+  }
+
+  containsAllLetters() {
+    const { word, found } = this.state;
+
+    const wordArray = word.split("");
+    const isSuperset = wordArray.every(function(val) {
+      return found.indexOf(val) >= 0;
+    });
+    this.setState({
+      win: isSuperset
+    });
   }
 
   componentDidMount() {
@@ -33,9 +45,7 @@ class App extends Component {
   }
 
   handleClick(key) {
-    const letters = this.state.letters;
-    const missed = this.state.missed;
-    const word = this.state.word;
+    const { letters, missed, word, found } = this.state;
 
     if (!missed.includes(key) && !word.includes(key)) {
       missed.push(key);
@@ -45,10 +55,15 @@ class App extends Component {
       letters.push(key);
     }
 
+    if (word.includes(key)) {
+      found.push(key);
+    }
+
     this.setState({
       letters,
       missed
     });
+    this.containsAllLetters();
   }
 
   handleNewGame() {
@@ -56,7 +71,9 @@ class App extends Component {
     this.setState({
       word: newWord,
       letters: [],
-      missed: []
+      missed: [],
+      found: [],
+      win: false
     });
   }
 
@@ -68,11 +85,7 @@ class App extends Component {
           onKeyEvent={(key, e) => this.handleClick(key)}
         />
         <div className="App-playground">
-
-          {/*{ this.state.letters === this.state.word.split("") ? (*/}
-              {/*<GameWon onCLickNew={() => this.handleNewGame()} />*/}
-          {/*) : null}*/}
-          {this.state.missed.length < 11 ? (
+          {this.state.missed.length < 11 && !this.state.win && (
             <div>
               <Hangman missed={this.state.missed} />
               <Missed missed={this.state.missed} />
@@ -83,8 +96,13 @@ class App extends Component {
                 />
               )}
             </div>
-          ) : (
-            <GameOver onCLickNew={() => this.handleNewGame()} />
+          )}
+
+          {(this.state.missed.length >= 11 || this.state.win) && (
+            <GameOver
+              win={this.state.win}
+              onClickNew={() => this.handleNewGame()}
+            />
           )}
         </div>
       </div>

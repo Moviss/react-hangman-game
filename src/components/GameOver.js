@@ -5,8 +5,12 @@ import "./GameOver.scss";
 const GameOver = props => {
   return (
     <div className="GameOver">
-      <div className="GameOver-label">GAME OVER</div>
-      <div className="GameOver-button" onClick={() => props.onCLickNew()}>
+      {props.win ? (
+        <div className="GameOver-label">YOU WON</div>
+      ) : (
+        <div className="GameOver-label">GAME OVER</div>
+      )}
+      <div className="GameOver-button" onClick={() => props.onClickNew()}>
         NEW WORD
       </div>
     </div>
