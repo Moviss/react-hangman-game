@@ -2,19 +2,18 @@ import React, { Component } from "react";
 import "./App.scss";
 import KeyboardEventHandler from "react-keyboard-event-handler";
 
-import unirest from "unirest";
-
 import Hangman from "./components/Hangman";
 import Missed from "./components/Missed";
 import LettersToGuess from "./components/LettersToGuess";
 import GameOver from "./components/GameOver";
+import GameWon from "./components/GameWon";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      word: null,
+      word: "",
       letters: [],
       missed: []
     };
@@ -22,7 +21,7 @@ class App extends Component {
 
   requestWord() {
     // request to api
-    return "word";
+    return "aberracja";
   }
 
   componentDidMount() {
@@ -68,6 +67,10 @@ class App extends Component {
           onKeyEvent={(key, e) => this.handleClick(key)}
         />
         <div className="App-playground">
+
+          { this.state.letters === this.state.word.split("") ? (
+              <GameWon onCLickNew={() => this.handleNewGame()} />
+          ) : null}
           {this.state.missed.length < 11 ? (
             <div>
               <Hangman missed={this.state.missed} />
