@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.scss";
 import KeyboardEventHandler from "react-keyboard-event-handler";
+import randomWords from 'random-words';
 
 import Hangman from "./components/Hangman";
 import Missed from "./components/Missed";
@@ -20,8 +21,8 @@ class App extends Component {
   }
 
   requestWord() {
-    // request to api
-    return "aberracja";
+    // gives random word
+    return randomWords({exactly: 1, maxLength: 11}).toString();
   }
 
   componentDidMount() {
@@ -68,9 +69,9 @@ class App extends Component {
         />
         <div className="App-playground">
 
-          { this.state.letters === this.state.word.split("") ? (
-              <GameWon onCLickNew={() => this.handleNewGame()} />
-          ) : null}
+          {/*{ this.state.letters === this.state.word.split("") ? (*/}
+              {/*<GameWon onCLickNew={() => this.handleNewGame()} />*/}
+          {/*) : null}*/}
           {this.state.missed.length < 11 ? (
             <div>
               <Hangman missed={this.state.missed} />
